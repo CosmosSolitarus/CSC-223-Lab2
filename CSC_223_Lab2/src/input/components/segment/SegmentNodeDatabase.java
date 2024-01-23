@@ -27,7 +27,7 @@ public class SegmentNodeDatabase {
 	}
 	
 	private void addDirectedEdge(PointNode point1, PointNode point2) {
-		// TODO
+		_adjLists.get(point1).add(point2);
 	}
 	
 	public void addUndirectedEdge(PointNode point1, PointNode point2) {
@@ -36,14 +36,22 @@ public class SegmentNodeDatabase {
 	}
 	
 	public void addAdjacencyList(PointNode point, List<PointNode> adjacencyList) {
-		// TODO
+		_adjLists.put(point, new HashSet<PointNode> (adjacencyList));
 	}
 	
 	public List<SegmentNode> asSegmentList() {
-		// TODO
+		List<SegmentNode> snList = new ArrayList<SegmentNode>();
+
+		for (PointNode pn1 : _adjLists.keySet()) {
+			for (PointNode pn2 : _adjLists.get(pn1)) {
+				snList.add(new SegmentNode(pn1, pn2));
+			}
+		}
+
+		return snList;
 	}
 	
 	public List<SegmentNode> asUniqueSegmentList() {
-		// TODO
+		return new ArrayList<SegmentNode>(new HashSet<>(asSegmentList()));
 	}
 }

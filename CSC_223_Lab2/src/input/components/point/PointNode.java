@@ -62,10 +62,13 @@ public class PointNode
 	@Override
 	public boolean equals(Object obj)
 	{
-		return (obj instanceof PointNode) && 
-				(_name.equals(((PointNode) obj).getName())) && 
-				(MathUtilities.doubleEquals(_x, ((PointNode) obj).getX())) && 
-				(MathUtilities.doubleEquals(_y, ((PointNode) obj).getY()));
+		if (!(obj instanceof PointNode)) {
+			return false;
+		}
+		
+		PointNode that = (PointNode) obj;
+
+		return MathUtilities.doubleEquals(_x, that.getX()) && MathUtilities.doubleEquals(_y, that.getY());
 	}
 
     @Override

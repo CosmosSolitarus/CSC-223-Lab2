@@ -30,9 +30,21 @@ public class SegmentNode
 	@Override
 	public boolean equals(Object obj)
 	{
-		return (obj instanceof SegmentNode) &&
-				(((SegmentNode) obj)._point1.equals(_point1)) &&
-				(((SegmentNode) obj)._point2.equals(_point2));
+		if (!(obj instanceof SegmentNode)) {
+			return false;
+		}
+		
+		SegmentNode that = (SegmentNode) obj;
+
+		if (this._point1.equals(that._point1) && this._point2.equals(that._point2)) {
+			return true;
+		}
+
+		if (this._point1.equals(that._point2) && this._point2.equals(that._point1)) {
+			return true;
+		}
+
+		return false;
 	}
 	
 	@Override
