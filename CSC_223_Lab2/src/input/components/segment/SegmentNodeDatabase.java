@@ -27,7 +27,7 @@ public class SegmentNodeDatabase {
 	}
 	
 	private void addDirectedEdge(PointNode point1, PointNode point2) {
-		// TODO
+		// TODO della's commit
 	}
 	
 	public void addUndirectedEdge(PointNode point1, PointNode point2) {
