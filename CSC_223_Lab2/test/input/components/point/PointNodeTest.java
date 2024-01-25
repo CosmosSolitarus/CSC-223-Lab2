@@ -100,7 +100,7 @@ class PointNodeTest {
 
 		// named PointNode against an unnamed PointNode
 		PointNode named = new PointNode("a name", 2, 2);
-		assertEquals(new PointNode(2, 2));
+		assertEquals(new PointNode(2, 2), named);
 		
 		//tests that fail equals
 		//swapped x and y
