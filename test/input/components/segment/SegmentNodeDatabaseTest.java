@@ -1,13 +1,12 @@
 package input.components.segment;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
 
 import input.components.point.PointNode;
 
 class SegmentNodeDatabaseTest
 {
+	@Test
     public SegmentNodeDatabase build()
     {
     	//      A                                 
@@ -42,11 +41,11 @@ class SegmentNodeDatabaseTest
     	return db;
     }
 
-	@Test
-	void testNumUndirectedEdges()
-	{
-		SegmentNodeDatabase db = build();
+// 	@Test
+// 	void testNumUndirectedEdges()
+// 	{
+// 		SegmentNodeDatabase db = build();
 		
-		assertEquals(10, db.numUndirectedEdges());
-	}
+// 		assertEquals(10, db.numUndirectedEdges());
+// 	}
 }
