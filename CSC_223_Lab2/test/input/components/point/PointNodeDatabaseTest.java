@@ -9,16 +9,6 @@ import org.junit.jupiter.api.Test;
 
 class PointNodeDatabaseTest {
 
-	//@Test
-	void constructorTest() {
-		ArrayList<PointNode> pnlist = new ArrayList<PointNode> 
-										(Arrays.asList(new PointNode(1,1), 
-														new PointNode(2,1), 
-														new PointNode(1,2)));
-		PointNodeDatabase database = new PointNodeDatabase(pnlist);
-		//assertEquals(database.size(), 3);
-	}
-	
 	@Test
 	void putTest() {
 		PointNodeDatabase database = new PointNodeDatabase();
@@ -27,11 +17,12 @@ class PointNodeDatabaseTest {
 		assertEquals(database.getName(1, 1), "PN 1");
 		assertEquals(database.getName(pn), "PN 1");
 
-		PointNode pn2 = new PointNode("PN 2", 1, 1);
+		PointNode pn2 = new PointNode("PN 2", 2, 2);
 		database.put(pn2);
 		assertEquals(database.getName(pn2), "PN 2");
 
 		database.put(new PointNode(89.00000003, 14.298565645));
+		assertTrue(database.contains(89, 14.298565645));
 	}
 	
 	@Test 
@@ -44,7 +35,8 @@ class PointNodeDatabaseTest {
 		PointNodeDatabase database = new PointNodeDatabase(pnlist);
 
 		assertTrue(database.contains(pn1)); 
-		assertFalse(database.contains(pnDuplicate));
+		assertTrue(database.contains(pnDuplicate));
+		//even though pnDuplicate isn't technically in the database, an equal node is
 		assertTrue(database.contains(pn2));
 		assertTrue(database.contains(pn3));
 		assertFalse(database.contains(new PointNode(2, 2)));
