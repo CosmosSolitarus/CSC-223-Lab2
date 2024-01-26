@@ -29,6 +29,12 @@ class SegmentNodeTest {
 		// two named points
 		SegmentNode nn = new SegmentNode(new PointNode("__UNNAMED", 12, -4.32), new PointNode("CookieMonster", 0.003, Math.PI));
 		assertEquals(new SegmentNode(new PointNode("__UNNAMED", 12, -4.32), new PointNode("CookieMonster", 0.003, Math.PI)), nn);
+
+		// different order
+		PointNode a = new PointNode("A", 1, 2.329);
+		PointNode b = new PointNode("B", 231.2, -932.0);
+
+		assertEquals(new SegmentNode(a, b), new SegmentNode(b, a));
 	}
 
 	@Test
