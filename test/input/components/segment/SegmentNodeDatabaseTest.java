@@ -49,4 +49,16 @@ class SegmentNodeDatabaseTest
 		
 		assertEquals(10, db.numUndirectedEdges());
 	}
+	@Test
+	void testAsSegmentList() {
+		SegmentNodeDatabase db = build();
+		int expectedSize = 20;
+		assertEquals(expectedSize, db.asSegmentList().size());
+	}
+	@Test
+	void testAsUniqueSegmentList() {
+		SegmentNodeDatabase db = build();
+		int expectedSize = 10;
+		assertEquals(expectedSize, db.asUniqueSegmentList().size());
+	}
 }
