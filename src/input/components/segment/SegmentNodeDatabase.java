@@ -53,7 +53,7 @@ public class SegmentNodeDatabase {
 
 		return snList;
 	}
-	
+	//brycen consulted here
 	public List<SegmentNode> asUniqueSegmentList() {
 		List<SegmentNode> snList = new ArrayList<SegmentNode>();
 
@@ -62,7 +62,7 @@ public class SegmentNodeDatabase {
 				snList.add(node);
 			}
 		}
-		
+
 		return snList;
 	}
 }
