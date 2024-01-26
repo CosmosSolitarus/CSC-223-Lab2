@@ -9,7 +9,7 @@ import input.components.point.PointNode;
 class SegmentNodeTest {
 
 	@Test
-	void Equalstest() {
+	void equalsTest() {
 		// NAMING SCHEME
 		// u = unnamed
 		// n = named
