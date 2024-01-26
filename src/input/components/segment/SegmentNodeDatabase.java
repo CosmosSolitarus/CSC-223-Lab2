@@ -55,6 +55,14 @@ public class SegmentNodeDatabase {
 	}
 	
 	public List<SegmentNode> asUniqueSegmentList() {
-		return new ArrayList<SegmentNode>(new HashSet<>(asSegmentList()));
+		List<SegmentNode> snList = new ArrayList<SegmentNode>();
+
+		for (SegmentNode node: asSegmentList()) {
+			if (!snList.contains(node)) {
+				snList.add(node);
+			}
+		}
+		
+		return snList;
 	}
 }
