@@ -27,6 +27,9 @@ public class SegmentNodeDatabase {
 	}
 	
 	private void addDirectedEdge(PointNode point1, PointNode point2) {
+		if (!_adjLists.containsKey(point1) ) {
+			_adjLists.put(point1, new HashSet<PointNode>() )
+		}
 		_adjLists.get(point1).add(point2);
 	}
 	
