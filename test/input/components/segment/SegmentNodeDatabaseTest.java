@@ -8,6 +8,7 @@ import input.components.point.PointNode;
 
 class SegmentNodeDatabaseTest
 {
+	//consulted brycen for some of this because i was so confused how to construct tests with a geometric figure. confusing
     public SegmentNodeDatabase build()
     {
     	//      A                                 
@@ -46,7 +47,7 @@ class SegmentNodeDatabaseTest
 	void testNumUndirectedEdges()
 	{
 		SegmentNodeDatabase db = build();
-		
+
 		assertEquals(10, db.numUndirectedEdges());
 	}
 	@Test
