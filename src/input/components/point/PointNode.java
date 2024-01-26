@@ -11,7 +11,7 @@ package input.components.point;
 import utilities.math.MathUtilities;
 
 /**
- * A 2D Point (x, y).
+ * A named 2D Point: [Name](x, y).
  */
 public class PointNode
 {
@@ -28,8 +28,9 @@ public class PointNode
 
 	/**
 	 * Create a new Point with the specified coordinates.
-	 * @param x The X coordinate
-	 * @param y The Y coordinate
+	 * 
+	 * @param x -- The X coordinate
+	 * @param y -- The Y coordinate
 	 */
 	public PointNode(double x, double y)
 	{
@@ -39,7 +40,8 @@ public class PointNode
 	}
 
 	/**
-	 * Create a new Point with the specified coordinates.
+	 * Create a new Point with the specified coordinates and a name.
+	 * 
 	 * @param name -- The name of the point. (Assigned by the UI)
 	 * @param x -- The X coordinate
 	 * @param y -- The Y coordinate
@@ -59,6 +61,14 @@ public class PointNode
 		return Double.valueOf(_x).hashCode() + Double.valueOf(_y).hashCode();
 	}
 
+	/**
+	 * Determines if this point equals a given point.
+	 * Two points are equal if they share the same
+	 * x-values and y-values. Name does not matter.
+	 * 
+	 * @param obj -- the given points
+	 * @return boolean -- if the points are equal
+	 */
 	@Override
 	public boolean equals(Object obj)
 	{
@@ -79,19 +89,22 @@ public class PointNode
 		String outY = _y + "";
     	
 		// Formatting
-		// --------------------------------
+		// ----------------------------------------------------------------
+		// check if outname points to ANONYMOUS for empty name of point
 		if (outName == ANONYMOUS) {
 			outName = "";
 		}
 		
+		// removes ".0" from integers stored as doubles for x-value
 		if (_x == (int) _x) {
 			outX = (int) _x + "";
 		}
 		
+		// removes ".0" from integers stored as doubles for y-value
 		if (_y == (int) _y) {
 			outY = (int) _y + "";
 		}
-		// --------------------------------
+		// ----------------------------------------------------------------
 		
     	return outName + "(" + outX + ", " + outY + ")";
 	}

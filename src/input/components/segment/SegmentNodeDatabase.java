@@ -1,3 +1,10 @@
+/**
+ * Implements HashMap database for segment nodes.
+ * 
+ * @authors Jack, Sage, Della 
+ * @date 1/26/24
+ */
+
 package input.components.segment;
 
 import java.util.*;

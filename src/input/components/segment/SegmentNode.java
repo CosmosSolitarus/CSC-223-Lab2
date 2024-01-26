@@ -27,6 +27,14 @@ public class SegmentNode
 		_point2 = pt2;
 	}
 
+	/**
+	 * Determines if this segment equals a given segment.
+	 * Two segments are equal if they share the same
+	 * endpoints. Point order does not matter, nor do names.
+	 * 
+	 * @param obj - the given points
+	 * @return boolean - if the points are equal
+	 */
 	@Override
 	public boolean equals(Object obj)
 	{

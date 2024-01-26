@@ -105,10 +105,13 @@ class PointNodeTest {
 		//tests that fail equals
 		//swapped x and y
 		assertNotEquals(new PointNode(2, 3), new PointNode(3, 2));
+
 		//decimal vs integer
 		assertNotEquals(new PointNode(2.2, 3), new PointNode(2, 3));
+
 		//each decimal is 0.00001 off, just enough to count
 		assertNotEquals(new PointNode(1.23456, 9.87654), new PointNode(1.23457, 9.87653));
+		
 		//same as last, but with an irrational
 		assertNotEquals(new PointNode(2, Math.sqrt(3)), new PointNode(2, 1.73204));
 	}
@@ -205,7 +208,4 @@ class PointNodeTest {
 		PointNode nrr = new PointNode("DefinitelyNotAZipBomb.zip", Math.cbrt(13), Math.log(2));
 		assertEquals("DefinitelyNotAZipBomb.zip(2.35133, 0.69314)", nrr.toString());
 	}
-
-	
-	
 }
