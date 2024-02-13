@@ -33,13 +33,7 @@ public class PointNodeDatabase {
 	}
 	
 	public String getName(PointNode pn) {
-		for (PointNode _pn: _points) {
-			if (_pn.equals(pn)) {
-				return _pn.getName();
-			}
-		}
-		
-		return null;
+		return getPoint(pn)._name;
 	}
 	
 	public String getName(double x, double y) {
