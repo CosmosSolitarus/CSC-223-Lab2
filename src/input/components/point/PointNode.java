@@ -78,7 +78,8 @@ public class PointNode
 		
 		PointNode that = (PointNode) obj;
 
-		return MathUtilities.doubleEquals(_x, that.getX()) && MathUtilities.doubleEquals(_y, that.getY());
+		return MathUtilities.doubleEquals(_x, that.getX()) &&
+			   MathUtilities.doubleEquals(_y, that.getY());
 	}
 
     @Override
